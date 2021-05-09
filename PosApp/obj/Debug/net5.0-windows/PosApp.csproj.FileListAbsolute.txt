@@ -63,3 +63,5 @@ D:\Github\.NET-Point-of-Sale\PosApp\bin\Debug\net5.0-windows\runtimes\win-x86\na
 D:\Github\.NET-Point-of-Sale\PosApp\bin\Debug\net5.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\Github\.NET-Point-of-Sale\PosApp\obj\Debug\net5.0-windows\PaymentWindow.g.cs
 D:\Github\.NET-Point-of-Sale\PosApp\obj\Debug\net5.0-windows\PaymentWindow.baml
+D:\Github\.NET-Point-of-Sale\PosApp\obj\Debug\net5.0-windows\InvoiceWindow.g.cs
+D:\Github\.NET-Point-of-Sale\PosApp\obj\Debug\net5.0-windows\InvoiceWindow.baml

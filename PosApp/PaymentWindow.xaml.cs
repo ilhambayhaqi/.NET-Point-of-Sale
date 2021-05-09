@@ -55,5 +55,11 @@ namespace PosApp
             invoice.Tax = 0.1f * total;
             invoice.TotalTax = invoice.Total + invoice.Tax;
         }
+
+        private void btnPrint_Click(object sender, RoutedEventArgs e)
+        {
+            InvoiceWindow printInvoice = new();
+            printInvoice.Show();
+        }
     }
 }
