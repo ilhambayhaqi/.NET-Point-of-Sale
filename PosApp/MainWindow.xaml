@@ -35,10 +35,24 @@
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <StackPanel Orientation="Horizontal" Height="30" VerticalAlignment="Center" Grid.ColumnSpan="2">
-                    <Button Style="{DynamicResource ButtonRounded}" Margin="20,0,0,0" Padding="20,0" Content="Makanan" Background="White"/>
-                    <Button Style="{DynamicResource ButtonRounded}" Margin="5,0,0,0" Padding="20,0" Content="Minuman" Background="White"/>
+                
+                <StackPanel Orientation="Horizontal" Height="50" Margin="20,0" VerticalAlignment="Center" Grid.ColumnSpan="2">
+                    <ItemsControl Name="ListViewCategory" ItemsSource="{Binding Category}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button Style="{DynamicResource ButtonRounded}" Margin="5,0,0,0" Padding="20,0" FontSize="14" Height="30" Content="{Binding Name}" Background="White" Name="btnCategory" Click="btnCategory_Click"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                    <!--<Button Style="{DynamicResource ButtonRounded}" Margin="5,0,0,0" Padding="20,0" Height="30" FontSize="14" Content="Heehe" Background="White"/>-->
                 </StackPanel>
+                
+
                 <ScrollViewer Grid.Row="1">
                     <StackPanel Margin="20,20,20,0">
                         <ItemsControl Name="ListViewProducts" ItemsSource="{Binding Product}">
@@ -82,7 +96,7 @@
                     <TextBlock Margin="30,10,10,0" Text="Order List" FontWeight="Bold" FontSize="26" Foreground="White"/>
                     <Button Margin="30,0,0,0" Style="{DynamicResource ButtonRounded}" Width="80" Height="30" Content="Reset" Background="#FFFFC4CD" BorderBrush="#FFFFADAD" Foreground="#FFC30000" Name="btnReset" Click="btnReset_Click"/>
                 </StackPanel>
-                <TextBlock Grid.Row="1" Padding="30,0,0,0" Text="Monday, 5 January 2021" FontFamily="Thin" Background="#FF2D4059" Foreground="White"/>
+                <TextBlock Grid.Row="1" Padding="30,0,0,0" Text="" FontFamily="Thin" Background="#FF2D4059" Foreground="White" Name="tbDate"/>
 
                 <ScrollViewer Grid.Row="2" Background="#FF758192" >
                     <StackPanel>

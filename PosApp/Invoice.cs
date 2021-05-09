@@ -47,7 +47,7 @@ namespace PosApp
 
         public Invoice()
         {
-            Date = DateTime.Now.ToString("dddd, D");
+            Date = DateTime.Now.ToString("dddd") + ", " + DateTime.Now.ToString("D");
             Total = 0;
             Tax = 0;
             TotalTax = 0;

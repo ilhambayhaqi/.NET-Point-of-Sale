@@ -31,7 +31,7 @@ namespace PosApp
             TbTotal.Text = invoice.TotalTax.ToString("C2");
         }
         private void btnCash_Click(object sender, RoutedEventArgs e)
-        {s
+        {
             if (String.IsNullOrEmpty(TbAmount.Text)){
                 MessageBox.Show("Amount Empty");
             } else
