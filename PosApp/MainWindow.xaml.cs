@@ -28,6 +28,7 @@ namespace PosApp
     /// </summary>
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
+        Invoice invoice = new();
         ObservableCollection<Product> myproducts = new();
         ObservableCollection<Order> myorder = new();
 
@@ -40,7 +41,7 @@ namespace PosApp
             myproducts = GetProducts();
             ListViewOrder.ItemsSource = myorder;
             ListViewProducts.ItemsSource = myproducts;
-
+            calcInvoice();
         }
 
         private ObservableCollection<Product> GetProducts()
@@ -64,6 +65,7 @@ namespace PosApp
             bool canInsert = !myorder.Any(i => i.Product.Equals(selectedProduct));
             Order order = new(selectedProduct);
             if(canInsert) myorder.Add(order);
+            calcInvoice();
         }
 
         private void BtnMin_Click(object sender, RoutedEventArgs e)
@@ -75,6 +77,7 @@ namespace PosApp
                 selectedOrder.Quantity -= 1;
                 selectedOrder.Subtotal = selectedOrder.CalcSubtotal();
             }
+            calcInvoice();
         }
 
         private void BtnPlus_Click(object sender, RoutedEventArgs e)
@@ -86,6 +89,7 @@ namespace PosApp
                 selectedOrder.Quantity += 1;
                 selectedOrder.Subtotal = selectedOrder.CalcSubtotal();
             }
+            calcInvoice();
         }
 
         private void BtnRemoveOrder_Click(object sender, RoutedEventArgs e)
@@ -93,6 +97,20 @@ namespace PosApp
             Button btn = sender as Button;
             Order selectedOrder = btn.DataContext as Order;
             myorder.Remove(myorder.Where(i => i.Product.Equals(selectedOrder.Product)).Single());
+            calcInvoice();
+        }
+
+        private void calcInvoice()
+        {
+            float total = 0;
+            foreach(Order order in myorder){
+                total += order.Subtotal;
+            }
+            invoice.Subtotal = total;
+            invoice.Tax = 0.1f * total;
+            invoice.Total = invoice.Subtotal + invoice.Tax;
+
+            Debug.WriteLine(invoice.Total.ToString());
         }
     }
 }
