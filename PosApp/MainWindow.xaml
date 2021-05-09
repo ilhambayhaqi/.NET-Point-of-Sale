@@ -80,7 +80,7 @@
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Orientation="Horizontal" Background="#FF2D4059">
                     <TextBlock Margin="30,10,10,0" Text="Order List" FontWeight="Bold" FontSize="26" Foreground="White"/>
-                    <Button Margin="30,0,0,0" Style="{DynamicResource ButtonRounded}" Width="80" Height="30" Content="Reset" Background="#FFFFC4CD" BorderBrush="#FFFFADAD" Foreground="#FFC30000"/>
+                    <Button Margin="30,0,0,0" Style="{DynamicResource ButtonRounded}" Width="80" Height="30" Content="Reset" Background="#FFFFC4CD" BorderBrush="#FFFFADAD" Foreground="#FFC30000" Name="btnReset" Click="btnReset_Click"/>
                 </StackPanel>
                 <TextBlock Grid.Row="1" Padding="30,0,0,0" Text="Monday, 5 January 2021" FontFamily="Thin" Background="#FF2D4059" Foreground="White"/>
 
@@ -150,15 +150,15 @@
 
                     <DockPanel Grid.Row="0" Grid.ColumnSpan="2" Background="#FFB6BBC2" Margin="0,2">
                         <TextBlock Grid.Column="0" Text="Subtotal" Margin="10,10" FontSize="14"/>
-                        <TextBlock DockPanel.Dock="Right" TextAlignment="Right" Text="{Binding Subtotal}" FontSize="14" Margin="10" VerticalAlignment="Center" Name="TbSubtotal"/>
+                        <TextBlock DockPanel.Dock="Right" TextAlignment="Right" Text="{Binding Total, StringFormat={}{0:c}}" FontSize="14" Margin="10" VerticalAlignment="Center" Name="TbSubtotal"/>
                     </DockPanel>
                     <DockPanel Grid.Row="1" Grid.ColumnSpan="2" Background="#FFB6BBC2" Margin="0,2">
                         <TextBlock Grid.Column="0" Text="Tax Include" Margin="10,10" FontSize="14"/>
-                        <TextBlock DockPanel.Dock="Right" TextAlignment="Right" Text="100" FontSize="14" Margin="10" VerticalAlignment="Center" Name="TbTax"/>
+                        <TextBlock DockPanel.Dock="Right" TextAlignment="Right" Text="{Binding Tax, StringFormat={}{0:c}}" FontSize="14" Margin="10" VerticalAlignment="Center" Name="TbTax"/>
                     </DockPanel>
                     <DockPanel Grid.Row="2" Grid.ColumnSpan="2" Background="#FFB6BBC2" Margin="0,2">
                         <TextBlock Grid.Column="0" Text="Total" Margin="10,20" FontSize="24"/>
-                        <TextBlock DockPanel.Dock="Right" TextAlignment="Right" Text="100" FontSize="20" Margin="10" VerticalAlignment="Center" Name="tbTotal"/>
+                        <TextBlock DockPanel.Dock="Right" TextAlignment="Right" Text="{Binding TotalTax, StringFormat={}{0:c}}" FontSize="20" Margin="10" VerticalAlignment="Center" Name="tbTotal"/>
                     </DockPanel>
 
                     <Button Style="{DynamicResource ButtonRounded}" Margin="0,10" Grid.Row="3" Grid.ColumnSpan="2" Height="50" Background="#FFF07B3F" FontSize="20" FontFamily="Bold" Foreground="White" Content="Pay With Cashless" BorderBrush="#FFF07B3F"/>

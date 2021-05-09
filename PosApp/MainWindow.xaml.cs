@@ -38,9 +38,11 @@ namespace PosApp
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = invoice;
             myproducts = GetProducts();
             ListViewOrder.ItemsSource = myorder;
             ListViewProducts.ItemsSource = myproducts;
+
             calcInvoice();
         }
 
@@ -106,11 +108,20 @@ namespace PosApp
             foreach(Order order in myorder){
                 total += order.Subtotal;
             }
-            invoice.Subtotal = total;
+            invoice.Total = total;
             invoice.Tax = 0.1f * total;
-            invoice.Total = invoice.Subtotal + invoice.Tax;
+            invoice.TotalTax = invoice.Total + invoice.Tax;
+            Debug.WriteLine(invoice.TotalTax.ToString());
+        }
 
-            Debug.WriteLine(invoice.Total.ToString());
+        private void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+            int count = myorder.Count;
+            for (int i=0; i < count; i++)
+            {
+                myorder.RemoveAt(0);
+            }
+            calcInvoice();
         }
     }
 }
