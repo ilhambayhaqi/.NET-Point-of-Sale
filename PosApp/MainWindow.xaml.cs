@@ -123,5 +123,11 @@ namespace PosApp
             }
             calcInvoice();
         }
+
+        private void btnPayment_Click(object sender, RoutedEventArgs e)
+        {
+            PaymentWindow paymentWindow = new(myorder.ToList());
+            paymentWindow.Show();
+        }
     }
 }

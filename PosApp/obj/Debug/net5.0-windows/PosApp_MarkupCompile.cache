@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 D:\Github\.NET-Point-of-Sale\PosApp\App.xaml
-11407045341
+2-1998373760
 
-15-964526800
+16-1775469156
 2141373677457
-MainWindow.xaml;
+MainWindow.xaml;PaymentWindow.xaml;
 
 False
 

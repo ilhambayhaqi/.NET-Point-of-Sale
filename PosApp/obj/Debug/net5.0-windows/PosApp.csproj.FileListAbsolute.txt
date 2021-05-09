@@ -61,3 +61,5 @@ D:\Github\.NET-Point-of-Sale\PosApp\bin\Debug\net5.0-windows\runtimes\win-x64\na
 D:\Github\.NET-Point-of-Sale\PosApp\bin\Debug\net5.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Github\.NET-Point-of-Sale\PosApp\bin\Debug\net5.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\Github\.NET-Point-of-Sale\PosApp\bin\Debug\net5.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Github\.NET-Point-of-Sale\PosApp\obj\Debug\net5.0-windows\PaymentWindow.g.cs
+D:\Github\.NET-Point-of-Sale\PosApp\obj\Debug\net5.0-windows\PaymentWindow.baml

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PosApp"
         mc:Ignorable="d"
-        Title="PosApp" Height="768" Width="1366" MinWidth="1366" FontFamily="Bahnschrift">
+        Title="PosApp" Height="768" Width="1366" MinWidth="1366" WindowStartupLocation="CenterScreen" FontFamily="Bahnschrift">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -15,7 +15,7 @@
         <Grid>
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFE5FF6E"/>
+                    <GradientStop Color="#FFF07B3F"/>
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
@@ -161,7 +161,7 @@
                         <TextBlock DockPanel.Dock="Right" TextAlignment="Right" Text="{Binding TotalTax, StringFormat={}{0:c}}" FontSize="20" Margin="10" VerticalAlignment="Center" Name="tbTotal"/>
                     </DockPanel>
 
-                    <Button Style="{DynamicResource ButtonRounded}" Margin="0,10" Grid.Row="3" Grid.ColumnSpan="2" Height="50" Background="#FFF07B3F" FontSize="20" FontFamily="Bold" Foreground="White" Content="Pay With Cashless" BorderBrush="#FFF07B3F"/>
+                    <Button Style="{DynamicResource ButtonRounded}" Margin="0,10" Grid.Row="3" Grid.ColumnSpan="2" Height="50" Background="#FFF07B3F" FontSize="20" FontFamily="Bold" Foreground="White" Content="Payment" BorderBrush="#FFF07B3F" Name="btnPayment" Click="btnPayment_Click"/>
 
                 </Grid>
             </Grid>

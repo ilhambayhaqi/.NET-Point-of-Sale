@@ -22,6 +22,7 @@ namespace PosApp
                 NotifyPropertyChanged("Total");
             }
         }
+
         public float tax;
         public float Tax
         {
