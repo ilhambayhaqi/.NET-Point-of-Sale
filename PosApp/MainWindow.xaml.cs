@@ -61,15 +61,7 @@ namespace PosApp
             Button btn = sender as Button;
             Product selectedProduct = btn.DataContext as Product;
 
-            bool canInsert = true;
-            foreach(Order p in myorder){
-                if (selectedProduct.Equals(p.Product))
-                {
-                    canInsert = false;
-                    break;
-                } 
-            }
-
+            bool canInsert = !myorder.Any(i => i.Product.Equals(selectedProduct));
             Order order = new(selectedProduct);
             if(canInsert) myorder.Add(order);
         }
@@ -94,6 +86,13 @@ namespace PosApp
                 selectedOrder.Quantity += 1;
                 selectedOrder.Subtotal = selectedOrder.CalcSubtotal();
             }
+        }
+
+        private void BtnRemoveOrder_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            Order selectedOrder = btn.DataContext as Order;
+            myorder.Remove(myorder.Where(i => i.Product.Equals(selectedOrder.Product)).Single());
         }
     }
 }
