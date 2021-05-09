@@ -21,6 +21,8 @@ namespace PosApp
     {
         List<Order> myorder = new();
         Invoice invoice = new();
+        float amount = 0;
+        float change = -1;
 
         public PaymentWindow(List<Order> order)
         {
@@ -36,8 +38,8 @@ namespace PosApp
                 MessageBox.Show("Amount Empty");
             } else
             {
-                float amount = float.Parse(TbAmount.Text);
-                float change = amount - invoice.TotalTax;
+                amount = float.Parse(TbAmount.Text);
+                change = amount - invoice.TotalTax;
 
                 if (change < 0) MessageBox.Show("Invalid Amound");
                 else TbChange.Text= change.ToString("C2");
@@ -58,8 +60,13 @@ namespace PosApp
 
         private void btnPrint_Click(object sender, RoutedEventArgs e)
         {
-            InvoiceWindow printInvoice = new();
-            printInvoice.Show();
+            if(change > 1)
+            {
+                InvoiceWindow printInvoice = new(myorder, invoice.Total, invoice.Tax, invoice.TotalTax, TbAmount.Text, TbChange.Text);
+                // myorder, invoice.Total, invoice.Tax, invoice.TotalTax ,TbAmount.Text, TbChange.Text
+                printInvoice.Show();
+                //printInvoice.Close();
+            }
         }
     }
 }

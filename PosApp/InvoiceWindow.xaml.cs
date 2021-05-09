@@ -19,9 +19,23 @@ namespace PosApp
     /// </summary>
     public partial class InvoiceWindow : Window
     {
-        public InvoiceWindow()
+        public InvoiceWindow(List<Order> order, float subtotal, float tax, float total, string amount, string charge)
         {
             InitializeComponent();
+
+            ListViewInvoice.ItemsSource = order;
+            tbSubtotal.Text = subtotal.ToString("C");
+            tbTax.Text = tax.ToString("C");
+            tbTotal.Text = total.ToString("C");
+            tbAmount.Text = float.Parse(amount).ToString("C");
+            tbChange.Text = charge;
+
+            this.IsEnabled = false;
+            PrintDialog printDialog = new();
+            if (printDialog.ShowDialog() == true)
+            {
+                printDialog.PrintVisual(print, "Invoice");
+            }
         }
     }
 }
