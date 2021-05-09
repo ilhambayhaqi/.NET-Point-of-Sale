@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PosApp": {
+      "commandName": "Project",
+      "workingDirectory": "D:\\Github\\.NET-Point-of-Sale\\PosApp"
+    }
+  }
+}
