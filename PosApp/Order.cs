@@ -9,10 +9,27 @@ namespace PosApp
 {
     public class Order : INotifyPropertyChanged
     {
-        public int Quantity { get; set; }
+        private int quantity;
+        public int Quantity
+        {
+            get { return quantity; }
+            set
+            {
+                quantity = value;
+                NotifyPropertyChanged("Quantity");
+            }
+        }
 
-
-        public float Subtotal { set; get; }
+        private float subtotal;
+        public float Subtotal
+        {
+            get { return subtotal; }
+            set
+            {
+                subtotal = value;
+                NotifyPropertyChanged("Subtotal");
+            }
+        }
         public Product Product { set; get; }
 
         public Order(Product product)

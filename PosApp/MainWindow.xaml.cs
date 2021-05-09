@@ -81,9 +81,8 @@ namespace PosApp
             if (selectedOrder.Quantity > 1)
             {
                 selectedOrder.Quantity -= 1;
-                selectedOrder.CalcSubtotal();
+                selectedOrder.Subtotal = selectedOrder.CalcSubtotal();
             }
-            Debug.WriteLine(btn.DataContext.ToString());
         }
 
         private void BtnPlus_Click(object sender, RoutedEventArgs e)
@@ -93,7 +92,7 @@ namespace PosApp
             if (selectedOrder.Quantity < 99)
             {
                 selectedOrder.Quantity += 1;
-                selectedOrder.CalcSubtotal();
+                selectedOrder.Subtotal = selectedOrder.CalcSubtotal();
             }
         }
     }
