@@ -66,6 +66,9 @@ namespace PosApp
                 // myorder, invoice.Total, invoice.Tax, invoice.TotalTax ,TbAmount.Text, TbChange.Text
                 printInvoice.Show();
                 //printInvoice.Close();
+            } else
+            {
+                MessageBox.Show("You have to pay before print reciept");
             }
         }
     }
