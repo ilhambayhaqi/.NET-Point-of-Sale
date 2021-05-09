@@ -24,6 +24,7 @@ namespace PosApp
             InitializeComponent();
 
             ListViewInvoice.ItemsSource = order;
+            tbDate.Text = new Invoice().Date;
             tbSubtotal.Text = subtotal.ToString("C");
             tbTax.Text = tax.ToString("C");
             tbTotal.Text = total.ToString("C");
